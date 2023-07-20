@@ -22,6 +22,7 @@ RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
 
 RUN yum -y install epel-release 
 RUN yum -y install http://software.internet2.edu/rpms/el7/x86_64/latest/packages/perfsonar-repo-0.11-1.noarch.rpm
+RUN yum clean expire-cache
     
     
 RUN  yum -y install \
