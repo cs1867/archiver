@@ -20,19 +20,12 @@ FROM centos:centos7
 
 
 
-RUN yum -y install \
-    epel-release \
-    http://software.internet2.edu/rpms/el7/x86_64/latest/packages/perfSONAR-repo-0.10-1.noarch.rpm 
+RUN yum -y install epel-release 
+RUN yum -y install http://software.internet2.edu/rpms/el7/x86_64/latest/packages/perfsonar-repo-0.11-1.noarch.rpm
     
     
- RUN  yum -y install \
-    perfsonar-archive \
-    supervisor \
-    net-tools \
-    sysstat \
-    tcpdump && \
-    yum clean all && \
-    rm -rf /var/cache/yum/*
+ RUN  yum -y install  perfsonar-archive 
+     
 
 
     
