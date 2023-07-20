@@ -12,6 +12,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
+                sh 'pwd'
                 sh 'docker build -t cs1867/archiver:latest .'
             }
         }
