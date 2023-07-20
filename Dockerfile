@@ -12,6 +12,11 @@ RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
     rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 
-RUN yum update
+#Install build environment dependencies
+RUN yum update -y && \
+    yum install -y epel-release make rpmbuild rpmdevtools git && \
+    yum clean all && \
+    mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS} && \
+    echo '%_topdir %(echo $HOME)/rpmbuild' > ~/.rpmmacros
 
 CMD ["echo", "Welcome to Jenkkns docker fun"]
