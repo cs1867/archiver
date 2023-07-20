@@ -1,4 +1,7 @@
-FROM centos7
- 
+FROM ubuntu
 
-CMD ["echo", "Welcome to Jenkkns docker fun"]
+MAINTAINER simpli
+
+RUN apt-get update
+
+CMD ["echo", "Welcome to Simplilearn"]
