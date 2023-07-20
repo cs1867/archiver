@@ -19,4 +19,6 @@ RUN yum update -y && \
     mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS} && \
     echo '%_topdir %(echo $HOME)/rpmbuild' > ~/.rpmmacros
 
+run mkdir /app
+
 CMD ["echo", "Welcome to Jenkkns docker fun"]
