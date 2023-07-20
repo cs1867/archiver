@@ -1,5 +1,5 @@
 FROM centos7
-
+ENV container docker
 #cleanup to enable systemd
 #RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
  #   systemd-tmpfiles-setup.service ] || rm -f $i; done); \
