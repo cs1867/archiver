@@ -1,5 +1,5 @@
-FROM centos7
+FROM ubuntu
 
-RUN yum update 
+RUN apt-get update 
 
 CMD ["echo", "Welcome to Simplilearn"]
