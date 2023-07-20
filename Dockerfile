@@ -1,7 +1,5 @@
-FROM ubuntu
+FROM centos7
 
-MAINTAINER simpli
-
-RUN apt-get update
+RUN yum update 
 
 CMD ["echo", "Welcome to Simplilearn"]
