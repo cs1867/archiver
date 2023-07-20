@@ -19,4 +19,7 @@ RUN yum update -y && \
     echo '%_topdir %(echo $HOME)/rpmbuild' > ~/.rpmmacros
 
     
-##CMD ["echo", "Welcome Perfsonar Archiver"]
+CMD ["echo", "Welcome Perfsonar Archiver"]
+CMD ["pwd"]
+
+CMD ["/usr/sbin/init"]
