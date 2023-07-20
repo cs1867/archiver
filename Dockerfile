@@ -18,6 +18,27 @@ RUN yum update -y && \
     mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS} && \
     echo '%_topdir %(echo $HOME)/rpmbuild' > ~/.rpmmacros
 
+
+
+RUN yum -y install \
+    # epel-release repo
+    epel-release \
+    # perfSONAR repo
+    http://software.internet2.edu/rpms/el7/x86_64/latest/packages/perfSONAR-repo-0.10-1.noarch.rpm && \
+    # reload the cache for the new repos
+    yum clean expire-cache && \
+    # install tools bundle and update required tools for docker image
+    yum -y install \
+    perfsonar-archive \
+    supervisor \
+    net-tools \
+    sysstat \
+    tcpdump && \
+    # clean up
+    yum clean all && \
+    rm -rf /var/cache/yum/*
+
+
     
 CMD ["echo", "Welcome Perfsonar Archiver"]
 CMD ["pwd"]
