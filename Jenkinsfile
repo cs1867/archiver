@@ -6,13 +6,13 @@ pipeline {
     stages { 
         stage('SCM Checkout') {
             steps{
-            git 'https://github.com/perfsonar/perfsonar-testpoint-docker.git'
+            git 'https://github.com/cs1867/archiver.git'
             }
         }
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t cs1867/perfsonar-testpoint:latest .'
+                sh 'docker build -t cs1867/archiver:latest .'
             }
         }
         stage('login to dockerhub') {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push cs1867/perfsonar-testpoint:latest'
+                sh 'docker push cs1867/archiver:latest'
             }
         }
 }
